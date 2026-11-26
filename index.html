@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestor de gastos</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+  <h1>Mis gastos</h1>
+
+  <form id="formulario">
+    <label for="descripcion">Descripción</label>
+    <input id="descripcion" type="text" maxlength="40" required>
+
+    <label for="monto">Monto</label>
+<div class="campo-monto">
+  <span class="prefijo" aria-hidden="true">U$D</span>
+  <input id="monto" type="number" min="0.01" step="0.01" inputmode="decimal" required>
+</div>
+
+    <label for="categoria">Categoría</label>
+    <select id="categoria">
+      <option>Comida</option>
+      <option>Transporte</option>
+      <option>Ocio</option>
+      <option>Hogar</option>
+      <option>Otros</option>
+    </select>
+
+    <button type="submit">Añadir gasto</button>
+  </form>
+
+  <section class="resumen" aria-labelledby="t-resumen">
+    <h2 id="t-resumen">Resumen</h2>
+    <p class="total">Total: <strong id="total">U$D 0.00</strong></p>
+    <ul id="porCategoria"></ul>
+  </section>
+
+  <section aria-labelledby="t-lista">
+    <h2 id="t-lista">Gastos</h2>
+    <label for="filtro">Mostrar</label>
+    <select id="filtro">
+      <option value="todas">Todas las categorías</option>
+      <option>Comida</option>
+      <option>Transporte</option>
+      <option>Ocio</option>
+      <option>Hogar</option>
+      <option>Otros</option>
+    </select>
+    <ul id="lista"></ul>
+    <p id="vacio" hidden>Aún no hay gastos aquí. Añade el primero con el formulario.</p>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
